@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "246314922351",
+    "project_id": "a-mart-6ec26",
+    "storage_bucket": "a-mart-6ec26.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:246314922351:android:6f6a8bc2d5ad81e3e3b89a",
+        "android_client_info": {
+          "package_name": "com.example.a_martmobprog"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDUHizgyi_5L6wj6yCNfiFM7VNACRtAPyk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
