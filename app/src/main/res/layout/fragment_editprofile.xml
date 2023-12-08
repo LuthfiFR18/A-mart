@@ -55,7 +55,7 @@
             android:id="@+id/profileLine"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/profileLine"
+            android:src="@drawable/pline"
             app:layout_constraintTop_toBottomOf="@id/profilePic"
             app:layout_constraintLeft_toLeftOf="parent"
             android:layout_marginTop="24dp"
