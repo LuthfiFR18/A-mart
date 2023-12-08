@@ -15,4 +15,6 @@
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
     <color name="lavender">#8692f7</color>
+    <color name="editprofilebg">#41A317</color>
+    <color name="profileBg">#9FD4A3</color>
 </resources>
