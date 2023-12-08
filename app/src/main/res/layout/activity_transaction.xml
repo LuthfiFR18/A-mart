@@ -151,7 +151,7 @@
             android:text="1x"
             android:textColor="@color/black"
             android:textStyle="bold"
-            android:textSize="20dp"
+            android:textSize="20dp"/>
     </LinearLayout>
 
 
@@ -278,9 +278,8 @@
 
 
         </LinearLayout>
-        
 
-
+    </LinearLayout>
 
 
 
