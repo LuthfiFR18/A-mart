@@ -8,7 +8,6 @@ import androidx.fragment.app.FragmentTransaction;
 import android.os.Bundle;
 
 import com.example.a_martmobprog.databinding.ActivityMainBinding;
-import com.example.a_martmobprog.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -22,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         replaceFragment(new HomeFragment());
 
 
-        binding.navView.setOnItemSelectedListener(item ->{
+        binding.bottomNavigationView.setOnItemSelectedListener(item ->{
 
             if (item.getItemId() == R.id.navigation_home){
                 replaceFragment(new HomeFragment());
@@ -41,7 +40,11 @@ public class MainActivity extends AppCompatActivity {
     private void replaceFragment(Fragment fragment){
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.nav_view, fragment);
+        fragmentTransaction.replace(R.id.frame_layout, fragment);
         fragmentTransaction.commit();
+
+
+
+
     }
 }

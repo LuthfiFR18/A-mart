@@ -1,84 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-<<<<<<< HEAD
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:id="@+id/profileBox"
-        android:padding="18dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
+        android:background="@color/containercolor"
+        android:padding="18dp"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
-        android:background="@color/profileBg"
-        app:layout_constraintRight_toRightOf="parent">
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <ImageView
+        <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/profileImg"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="40dp"
-            android:src="@drawable/profile"
+            android:src="@drawable/rectangle"
             app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/profileData"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintRight_toLeftOf="@id/profileData"/>
+            app:shapeAppearanceOverlay="@style/roundedImageViewRounded"/>
 
         <LinearLayout
             android:id="@+id/profileData"
-            android:layout_marginEnd="32dp"
-            android:layout_marginTop="8dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="32dp"
+            android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toRightOf="@id/profileImg"
-            android:orientation="vertical">
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
             <TextView
                 android:id="@+id/profileName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintLeft_toRightOf="@id/profileImg"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toTopOf="@id/profilePhone"
+                android:fontFamily="@font/robotobold"
                 android:text="TestUser"
                 android:textColor="@color/white"
-                android:fontFamily="@font/robotobold"
-                android:textSize="20sp"/>
+                android:textSize="20sp"
+                app:layout_constraintBottom_toTopOf="@id/profilePhone"
+                app:layout_constraintLeft_toRightOf="@id/profileImg"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/profilePhone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:layout_constraintLeft_toRightOf="@id/profileImg"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/profileName"
-                app:layout_constraintBottom_toTopOf="@id/profileUnit"
+                android:fontFamily="@font/robotobold"
                 android:text="087283233"
                 android:textColor="@color/white"
-                android:fontFamily="@font/robotobold"
-                android:textSize="20sp"/>
+                android:textSize="20sp"
+                app:layout_constraintBottom_toTopOf="@id/profileUnit"
+                app:layout_constraintLeft_toRightOf="@id/profileImg"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/profileName" />
 
             <TextView
                 android:id="@+id/profileUnit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintLeft_toRightOf="@id/profileImg"
-                app:layout_constraintTop_toBottomOf="@id/profilePhone"
-                app:layout_constraintBottom_toBottomOf="@id/profileData"
+                android:fontFamily="@font/robotobold"
                 android:text="Unit 1000"
                 android:textColor="@color/white"
-                android:fontFamily="@font/robotobold"
-                android:textSize="20sp"/>
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@id/profileData"
+                app:layout_constraintLeft_toRightOf="@id/profileImg"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/profilePhone" />
         </LinearLayout>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
 
     <TextView
         android:id="@+id/editProfile"
@@ -311,13 +312,6 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-=======
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ProfileFragment">
-
     <TextView
         android:id="@+id/text_notifications"
         android:layout_width="match_parent"
@@ -331,5 +325,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
->>>>>>> 0bc371f (gridview product error)
+
 </androidx.constraintlayout.widget.ConstraintLayout>

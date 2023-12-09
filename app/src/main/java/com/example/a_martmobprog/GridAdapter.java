@@ -14,13 +14,15 @@ public class GridAdapter extends BaseAdapter {
     Context context;
 
     String [] productName;
+    String [] productPrice;
     int[] productImage;
 
     LayoutInflater inflater;
 
-    public GridAdapter(Context context, String[] productName, int[] productImage){
+    public GridAdapter(Context context, String[] productName,String[] productPrice, int[] productImage){
         this.context = context;
         this.productName = productName;
+        this.productPrice = productPrice;
         this.productImage = productImage;
         this.inflater = LayoutInflater.from(context);
     }
@@ -51,10 +53,13 @@ public class GridAdapter extends BaseAdapter {
         }
 
         ImageView imageView = convertView.findViewById(R.id.imageproduct);
-        TextView textView = convertView.findViewById(R.id.productname);
+        TextView productNameTextView = convertView.findViewById(R.id.productname);
+        TextView productPriceTextView = convertView.findViewById(R.id.productprice);
+
 
         imageView.setImageResource(productImage[position]);
-        textView.setText(productName[position]);
+        productNameTextView.setText(productName[position]);
+        productPriceTextView.setText(productPrice[position]);
 
         return convertView;
     }

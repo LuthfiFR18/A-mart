@@ -2,54 +2,62 @@
 <androidx.cardview.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="170dp"
-    android:layout_height="185dp"
-    android:layout_margin="25dp"
-    app:cardCornerRadius="10dp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
     app:cardElevation="15dp">
 
-    <RelativeLayout
+    <LinearLayout
+        android:id="@+id/layoutgridproduct1"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
 
         <ImageView
             android:id="@+id/imageproduct"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@mipmap/ic_launcher"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="10dp"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Discount 10%"
-            android:textSize="12sp"
-            android:textColor="@color/red"
-            android:layout_toRightOf="@id/imageproduct"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="10dp"/>
-
-        <TextView
-            android:id="@+id/productname"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Product1"
-            android:layout_toRightOf="@id/imageproduct"
-            android:layout_marginTop="50dp"
-            android:layout_marginStart="15dp"
-            android:textSize="12sp"
-            android:textStyle="bold"
-            android:textColor="@color/black"/>
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:hint="Add To Cart"
-            android:textColorHint="@color/white"
-            android:backgroundTint="@color/lime"/>
+            android:src="@drawable/rectangle"
+            android:scaleType="centerCrop"
+            android:contentDescription="image_product"/>
 
-    </RelativeLayout>
+
+
+
+           <TextView
+               android:id="@+id/productname"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:text="Product Name"
+               android:textSize="18sp"
+               android:textStyle="bold"
+               android:gravity="center"
+               android:layout_marginTop="8dp"/>
+
+           <TextView
+               android:id="@+id/productprice"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:text="Description text"
+               android:textSize="16sp"
+               android:gravity="center"
+                />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"
+            app:icon="@drawable/baseline_add_shopping_cart_24"
+            app:iconGravity="textStart"
+            app:iconSize="24dp"
+            app:backgroundTint="@color/lime"
+            app:fontFamily="@font/robotoregular"
+            android:contentDescription="addtocartBtn"/>
+
+
+       </LinearLayout>
+
+
 
 </androidx.cardview.widget.CardView>

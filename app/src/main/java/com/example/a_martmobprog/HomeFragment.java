@@ -84,7 +84,7 @@ public class HomeFragment extends Fragment {
 //    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 //        int name = item.getItemId();
 //        if (name == R.id.action_bar_profile){
-//            startActivity(new Intent(getActivity(), ChatActivity.class));
+//            startActivity(new Intent(getActivity(), .class));
 //        }
 //        //else{
 //        // startActivity(new Intent(getActivity(), .class));

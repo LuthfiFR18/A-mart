@@ -1,4 +1,4 @@
-package com.example.a_martmobprog.ui.profile;
+package com.example.a_martmobprog;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -9,8 +9,6 @@ import android.widget.ImageView;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-
-import com.example.a_martmobprog.R;
 
 public class EditProfileFragment extends Fragment implements View.OnClickListener{
 
@@ -23,7 +21,7 @@ public class EditProfileFragment extends Fragment implements View.OnClickListene
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_editprofile, container, false);
-        ImageView back = view.findViewById(R.id.back);
+        ImageView back = view.findViewById(R.id.profilePic);
         back.setOnClickListener(this);
         return view;
     }
@@ -31,8 +29,8 @@ public class EditProfileFragment extends Fragment implements View.OnClickListene
     @Override
     public void onClick(View view) {
         profileFragment = new ProfileFragment();
-        fragmentTransaction.replace(R.id.container, profileFragment);
-        fragmentTransaction.addToBackStack(null);
-        fragmentTransaction.commit();
+       fragmentTransaction.replace(R.id.container, profileFragment);
+       fragmentTransaction.addToBackStack(null);
+       fragmentTransaction.commit();
     }
 }

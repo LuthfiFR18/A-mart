@@ -4,34 +4,38 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
+import android.widget.Button;
 
-import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProvider;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
-import com.example.a_martmobprog.databinding.FragmentProfileBinding;
 
-public class ProfileFragment extends Fragment {
+import com.example.a_martmobprog.EditProfileFragment;
+import com.example.a_martmobprog.R;
 
-    private FragmentProfileBinding binding;
 
-    public View onCreateView(@NonNull LayoutInflater inflater,
-                             ViewGroup container, Bundle savedInstanceState) {
-        ProfileViewModel notificationsViewModel =
-                new ViewModelProvider(this).get(ProfileViewModel.class);
+public class ProfileFragment extends Fragment implements View.OnClickListener{
 
-        binding = FragmentProfileBinding.inflate(inflater, container, false);
-        View root = binding.getRoot();
+    Fragment editProfileFragment;
+    FragmentManager fragmentManager = getParentFragmentManager();
+    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
-        final TextView textView = binding.textNotifications;
-        notificationsViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
-        return root;
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        View view = inflater.inflate(R.layout.fragment_profile, container, false);
+        Button editBtn = view.findViewById(R.id.editProfile);
+        editBtn.setOnClickListener(this);
+        return view;
     }
 
     @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        binding = null;
+    public void onClick(View view) {
+       editProfileFragment = new EditProfileFragment();
+        fragmentTransaction.replace(R.id.container, editProfileFragment);
+        fragmentTransaction.addToBackStack(null);
+       fragmentTransaction.commit();
     }
 }
