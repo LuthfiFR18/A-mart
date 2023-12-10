@@ -29,7 +29,7 @@ public class EditProfileFragment extends Fragment implements View.OnClickListene
     @Override
     public void onClick(View view) {
         profileFragment = new ProfileFragment();
-       fragmentTransaction.replace(R.id.container, profileFragment);
+       fragmentTransaction.replace(R.id.frame_layout, profileFragment);
        fragmentTransaction.addToBackStack(null);
        fragmentTransaction.commit();
     }
