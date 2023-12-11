@@ -34,7 +34,7 @@ public class ProfileFragment extends Fragment implements View.OnClickListener{
     @Override
     public void onClick(View view) {
        editProfileFragment = new EditProfileFragment();
-        //fragmentTransaction.replace(R.id.container, editProfileFragment);
+        fragmentTransaction.replace(R.id.container, editProfileFragment);
         fragmentTransaction.addToBackStack(null);
        fragmentTransaction.commit();
     }
