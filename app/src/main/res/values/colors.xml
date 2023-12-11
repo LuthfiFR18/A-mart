@@ -17,4 +17,7 @@
     <color name="lavender">#8692f7</color>
     <color name="lime">#41A317</color>
     <color name="containercolor">#9FD4A3</color>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
 </resources>
