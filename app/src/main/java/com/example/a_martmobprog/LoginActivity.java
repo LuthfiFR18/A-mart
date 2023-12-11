@@ -19,6 +19,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private ActivityLoginBinding binding;
     private FirebaseAuth auth;
+    private SessionManager sessionManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +28,16 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         auth = FirebaseAuth.getInstance();
+        sessionManager = new SessionManager(getApplicationContext());
+
+        // Check if "Remember Me" is enabled
+        User rememberMeUser = sessionManager.getRememberMeDetails();
+        if (rememberMeUser.isRememberMe()) {
+            // Use the stored email and password to pre-fill the fields
+            binding.loginEmail.setText(rememberMeUser.getEmail());
+            binding.loginPass.setText(rememberMeUser.getPassword());
+            binding.checkboxRememberMe.setChecked(true);
+        }
 
         binding.btnmasuk1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,6 +65,15 @@ public class LoginActivity extends AppCompatActivity {
                             @Override
                             public void onSuccess(AuthResult authResult) {
                                 Toast.makeText(LoginActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
+
+                                // If "Remember Me" is checked, save credentials
+                                if (binding.checkboxRememberMe.isChecked()) {
+                                    sessionManager.saveRememberMeDetails(email, pass, true);
+                                } else {
+                                    // If "Remember Me" is not checked, clear saved credentials
+                                    sessionManager.saveRememberMeDetails("", "", false);
+                                }
+
                                 startActivity(new Intent(LoginActivity.this, MainActivity.class));
                                 finish();
                             }
