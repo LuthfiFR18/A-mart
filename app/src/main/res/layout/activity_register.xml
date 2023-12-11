@@ -15,7 +15,7 @@
         android:layout_marginTop="140dp"
         android:fontFamily="@font/robotobold"
         android:text="Daftar"
-        android:textColor="#FFFFFF"
+        android:textColor="@color/black"
         android:textSize="48sp"
         android:id="@+id/txtmasuk">
     </TextView>
