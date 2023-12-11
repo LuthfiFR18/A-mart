@@ -1,11 +1,17 @@
 package com.example.a_martmobprog;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 
 import com.example.a_martmobprog.databinding.ActivityMainBinding;
 
@@ -20,6 +26,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
         replaceFragment(new HomeFragment());
 
+        setSupportActionBar(binding.toolbar.getRoot());
+        getSupportActionBar().setTitle("");
+        ;
 
         binding.bottomNavigationView.setOnItemSelectedListener(item ->{
 
@@ -35,7 +44,10 @@ public class MainActivity extends AppCompatActivity {
 
             return true;
         });
+
+
     }
+
 
     private void replaceFragment(Fragment fragment){
         FragmentManager fragmentManager = getSupportFragmentManager();
@@ -47,4 +59,28 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.toolbar_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        int itemId = item.getItemId();
+        Log.d("MenuItemClicked", "Item ID: " + itemId);
+
+        if (itemId == R.id.action_bar_fav) {
+            startActivity(new Intent(this, FavoriteActivity.class));
+            return true; // Item is handled
+        } else if (itemId == R.id.action_bar_cart) {
+            startActivity(new Intent(this, CartActivity.class));
+            return true; // Item is handled
+        }
+
+        return super.onOptionsItemSelected(item); // Item not handled
+    }
+
 }
+

@@ -56,9 +56,9 @@ public class ProductFragment extends Fragment {
 
         binding = FragmentProductBinding.inflate(inflater,container,false);
 
-        String[]productName = {"Product 1","Product 2","Product 3","Product 4"};
-        String[]productPrice = {"Rp3.000,00","Rp4.000,00","Rp5.000,00","Rp6.000,00"};
-        int[] productImage = {R.drawable.rectangle,R.drawable.rectangle,R.drawable.rectangle,R.drawable.rectangle};
+        String[]productName = {"Product 1","Product 2","Product 3","Product 4","Product 5","Product 6","Product 7","Product 8"};
+        String[]productPrice = {"Rp3.000,00","Rp4.000,00","Rp5.000,00","Rp6.000,00","Rp7.000,00","Rp8.000,00","Rp9.000,00","Rp10.000,00"};
+        int[] productImage = {R.drawable.rectangle,R.drawable.rectangle,R.drawable.rectangle,R.drawable.rectangle,R.drawable.rectangle,R.drawable.rectangle,R.drawable.rectangle,R.drawable.rectangle};
 
         GridAdapter gridAdapter = new GridAdapter(requireContext(),productName,productPrice,productImage);
         binding.gridView.setAdapter(gridAdapter);
