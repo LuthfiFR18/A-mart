@@ -2,7 +2,12 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/containerEdit"
+    tools:context=".Editprofile">
+
+
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/topBox"
@@ -30,7 +35,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Profile"
+            android:text="Edit Profile"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
@@ -38,7 +43,7 @@
             android:fontFamily="@font/robotobold"
             android:textSize="28sp"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
-    
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -133,10 +138,11 @@
             android:padding="12dp"/>
 
         <Button
+            android:id="@+id/saveEdit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/editprofile"
-            android:hint="Edit Profile"
+            android:text="Edit Profile"
             android:backgroundTint="@color/lime"
             android:textColorHint="@color/white"
             app:layout_constraintTop_toBottomOf="@id/editPhone"
