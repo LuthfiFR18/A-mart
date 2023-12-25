@@ -29,7 +29,6 @@ public class MainActivity extends AppCompatActivity {
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         setSupportActionBar(binding.toolbar.getRoot());
         getSupportActionBar().setTitle("");
-
         ;
 
         binding.bottomNavigationView.setOnItemSelectedListener(item ->{
